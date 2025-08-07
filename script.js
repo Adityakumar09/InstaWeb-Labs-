@@ -79,6 +79,7 @@ class FormValidator {
         
         if (isNameValid && isEmailValid) {
             this.showSuccessMessage();
+            this.simulatePythonProcessing();
         } else {
             this.showErrorAlert('Please fix the errors above before submitting.');
         }
@@ -92,6 +93,24 @@ class FormValidator {
         
         this.resultSection.style.display = 'block';
         this.resultSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    simulatePythonProcessing() {
+        const name = this.nameInput.value.trim();
+        const email = this.emailInput.value.trim();
+        
+        setTimeout(() => {
+            this.resultContent.innerHTML = `Python Script Output:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Processing form data...
+            Validation completed successfully!
+
+            Received data: Name - ${name}, Email - ${email}
+
+            Status: Data processed successfully
+            Timestamp: ${new Date().toLocaleString()}
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+        }, 500);
     }
     
     showSuccessAlert(message) {
@@ -125,4 +144,3 @@ class FormValidator {
 document.addEventListener('DOMContentLoaded', () => {
     new FormValidator();
 });
-
