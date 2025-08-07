@@ -15,11 +15,30 @@
         </header>
 
         <div class="form-container">
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name">
+                    <span class="error-message" id="nameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                
+                <button type="submit" id="submitBtn">Submit Form</button>
+            </form>
             
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h3>Form Submission Result:</h3>
+                <div id="resultContent"></div>
+            </div>
         </div>
 
         <footer>
-            <p>Created by [Your Name] for Websites.co.in Internship</p>
+            <p>Created by AKS </p>
         </footer>
     </div>
 
